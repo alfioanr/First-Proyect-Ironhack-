@@ -1,0 +1,13 @@
+ body{
+     text-align: center;
+ }
+ h1{
+     margin-bottom: 0%;
+     font-size: 100px;
+ }
+ #button{
+    margin: 2%;
+ }
+ #canvas{
+      border: 1px solid red;
+}
