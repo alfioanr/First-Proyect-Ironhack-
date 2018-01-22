@@ -1,11 +1,26 @@
-// Funcion Constructora
-var bullets = function() {
-  this.movimientoX = 0;
-  this.movimientoY = 0;
-  //Propiedades
-  this.zzz = "";
+function Bullet() {
+   
+    this.bulletUpdate = function() {}
+    this.bulletDraw = function() {}
+}
 
-  // Metodos
-  this.setMoveX = function() {};
-  this.setMoveY = function() {};
-};
+function bullet(board, char1, char2){
+    switch (Char.allien.positionX) {
+        case 3:
+            
+            break;
+    
+        default:
+            break;
+    }
+}
+
+
+
+//moving chars and bullets
+function moving(X,Y){
+this.directionX
+this.directionY
+
+}
+

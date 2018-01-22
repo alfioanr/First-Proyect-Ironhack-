@@ -21,12 +21,5 @@ board.prototype.drawBoard = function(canvas) {
   console.log(this.position);
 };
 
-board.prototype.personajes = function(img ,position){
-  var x = position.x
-  var y = position.y
-  var image = document.getElementById(img);
- this.ctx.drawImage(image, x, y);
+
  
- this.ctx.clearRect(x, y, 100, 100);
-console.log("olis");
-}
