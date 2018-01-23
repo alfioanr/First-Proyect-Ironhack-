@@ -10,7 +10,7 @@ function Player(name, strength, position) {
   this.stregth = Math.floor(Math.random()) * strength;
 }
 Player.prototype.takeDamage = function(damage) {
-  this.health = this.health - damage;
+  this.health -= damage;
 };
 Player.prototype.isAlive = function() {
   if (health > 0) {
@@ -42,6 +42,10 @@ Player.prototype.Move = function(direction) {
     default:
       break;
   }
+  function takeDamageFrom (Player) {
+
+  }
+
 };
 // funcion para crear melee
 function Melee(race) {
@@ -49,7 +53,7 @@ function Melee(race) {
   this.range = 1;
   this.MAX_MOVE = 3;
   this.race = race;
-}
+} 
 Melee.prototype = Object.create(Player.prototype);
 
 // funcion para crear rango
@@ -60,3 +64,7 @@ function Ranged(race) {
   this.race = race;
 }
 Ranged.prototype = Object.create(Player.prototype);
+
+function updatePjs (){
+  
+}
