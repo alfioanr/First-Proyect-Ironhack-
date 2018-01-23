@@ -6,6 +6,7 @@
               
         updatePjs(ranged);
         updatePjs(melee);
+        updatebullets()
         // para probar si colisionan
         var isColliding = testCollisionPjs(ranged,melee)
             id (isColliding){
@@ -14,20 +15,20 @@
     }
 melee : point (x,y)
 ranged : point (x,y)
-
-getDistanceBetweenPjs (ranged,melee){//return distance(number)
+//return distance(number)
+getDistanceBetweenPjs (ranged,melee){
 var vx = ranged.x - melee.x;
 var vy = ranged.y - melee.y;
-return Math.sqrt(vx*vx*vy*vy);
-}
+return (VX,VY) 
+};
 testCollisionPjs (ranged,melee){ // return if colliding  test(true/false)
     var distance = getDistanceBetweenPjs(ranged,melee);
     return distance < 50 
 
 }
 
-}
-// quizas sirva como bono
+
+// quizas sirva como bono convertir el juego en cooperativo y que salgan enemigos aleatorios
 randomGeneratorEnemy = function (){
     Math.random()
 }

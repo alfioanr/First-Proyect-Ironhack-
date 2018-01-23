@@ -27,4 +27,4 @@ drawPlayer = function (position,name){
     ctx.filltext()
     ctx.restore
     ctx.clearRect()
- 
+}
