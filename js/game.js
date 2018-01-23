@@ -25,10 +25,9 @@ testCollisionPjs (ranged,melee){ // return if colliding  test(true/false)
     return distance < 50 
 
 }
-// posible funcion que dibujes los pjs
-drawPlayer = function (type){
-    ctx.save();
-    ctx.fillstyle = "";
-    ctx.filltext()
-    ctx.restore
+
+}
+// quizas sirva como bono
+randomGeneratorEnemy = function (){
+    Math.random()
 }

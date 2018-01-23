@@ -20,6 +20,11 @@ board.prototype.drawBoard = function(canvas) {
 }
   console.log(this.position);
 };
-
-
+// posible funcion que dibujes los pjs
+drawPlayer = function (position,name){
+    ctx.save();
+    ctx.image = // imagen de sprite;
+    ctx.filltext()
+    ctx.restore
+    ctx.clearRect()
  
