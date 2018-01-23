@@ -22,6 +22,13 @@ return Math.sqrt(vx*vx*vy*vy);
 }
 testCollisionPjs (ranged,melee){ // return if colliding  test(true/false)
     var distance = getDistanceBetweenPjs(ranged,melee);
-    return distance <
+    return distance < 50 
 
+}
+// posible funcion que dibujes los pjs
+drawPlayer = function (type){
+    ctx.save();
+    ctx.fillstyle = "";
+    ctx.filltext()
+    ctx.restore
 }
