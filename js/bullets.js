@@ -23,3 +23,13 @@ this.directionY
 
 }
 
+// para escribir eventos 
+document.onkeyup = function(event){
+    if (event.keyCode === 68){
+        player.pressingRight = true;
+    }
+    else if (event.keyCode === 83){
+        player.pressingDown = true;
+}
+}
+
