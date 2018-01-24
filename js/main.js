@@ -1,51 +1,34 @@
-board = new board();
-board.drawBoard("canvas");
-var randomPos = Math.floor(Math.random() * 63);
-var randomPos2 = Math.floor(Math.random() * 63);
-console.log(board.position[13]);
-var Player1 = new Melee("estrella", 100, board.position[randomPos], "human");
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var game;
 
-var Player2 = new Ranged("circulo", 100, board.position[randomPos2], "human");
-console.log(board.position[14]);
-board.drawPlayer(Player1.position, Player1.name);
-board.drawPlayer(Player2.position, Player2.name);
-board.deletePlayer(board.position[0]);
-
-document.onkeyup = function(event) {
-  console.log(event.keyCode);
-  board.deletePlayer(Player1.position);
-  board.deletePlayer(Player2.position);
-  switch (event.keyCode) {
-    case 87:
-      Player1.Move("U");
-      break;
-    case 83:
-      Player1.Move("D");
-      break;
-    case 65:
-      Player1.Move("L");
-      break;
-    case 68:
-      Player1.Move("R");
-      break;
-    case 38:
-      Player2.Move("U");
-      break;
-    case 40:
-      Player2.Move("D");
-      break;
-    case 37:
-      Player2.Move("L");
-      break;
-    case 39:
-      Player2.Move("R");
-      break;
-
-    default:
-      break;
-  }
-  board.drawPlayer(Player1.position, Player1.name);
-  board.drawPlayer(Player2.position,Player2.name)
-
+window.onload = function() {
+  game = new Game();
+  game.board.drawBoard();
+  game.players.drawPlayer();
 };
 
+function update() {
+  ctx.clearRect(0, 0, 800, 800);
+  game.board.drawBoard();
+  game.players.MovePlayer();
+   game.players.drawPlayer();
+}
+
+setInterval(update, 40);
+
+document.onkeydown = function(e) {
+  switch (e.keyCode) {
+    case 38:
+      game.players.MovePlayer("up");
+      break;
+    case 40:
+    game.players.MovePlayer("down"); 
+    break;
+    case 37:
+    game.players.MovePlayer("left")
+    break;
+    case 39:
+    game.players.MovePlayer("right")
+  }
+};

@@ -14,15 +14,3 @@ function Bullet(position,width,height) {
 
 
 
-
-
-//moving chars and bullets
-function moving(X,Y){
-this.directionX
-this.directionY
-
-}
-
-// para escribir eventos 
-
-

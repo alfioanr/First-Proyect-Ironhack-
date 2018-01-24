@@ -1,14 +1,11 @@
 // Funcion Constructora
-var board = function() {
+function Board() {
   this.position = [];
-  this.canvas;
-  this.ctx;
-};
+  this.canvas = canvas;
+  this.ctx = ctx;
+}
 
-board.prototype.drawBoard = function(canvas) {
-  this.canvas = document.getElementById(canvas);
-  this.ctx = this.canvas.getContext("2d");
-
+Board.prototype.drawBoard = function(canvas) {
   for (x = 0; x < 800; x = x + 100) {
     for (y = 0; y < 800; y = y + 100) {
       this.ctx.strokeRect(x, y, 100, 100);
@@ -16,16 +13,14 @@ board.prototype.drawBoard = function(canvas) {
       this.position.push({ x: x, y: y });
     }
   }
-  console.log(this.position);
 };
 // posible funcion que dibujes los pjs
-board.prototype.drawPlayer = function(position, name) {
+Board.prototype.drawPlayer = function(position, name) {
   var image = document.getElementById(name);
-  
+
   this.ctx.drawImage(image, position.x, position.y);
-    
 };
-board.prototype.deletePlayer = function (position){
-  this.ctx.clearRect(position.x, position.y, 100, 100);
-  this.ctx.strokeRect(position.x, position.y, 100, 100);
-}
+// board.prototype.deletePlayer = function (position){
+//   this.ctx.clearRect(position.x, position.y, 100, 100);
+//   this.ctx.strokeRect(position.x, position.y, 100, 100);
+// }
