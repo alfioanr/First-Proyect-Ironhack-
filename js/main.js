@@ -18,6 +18,8 @@ function update() {
   game.board.drawBoard();
   game.players.drawPlayer();
   game.players1.drawPlayer();
+ 
+  // game.players1.drawPlayer();
 }
 // console.log("olis")
 // console.log(game.players.positionX)

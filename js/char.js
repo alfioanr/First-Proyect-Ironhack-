@@ -1,5 +1,5 @@
 // Funcion Constructora
-function Player(name, strength, positionX, positionY) {
+function Player(strength, positionX, positionY, img) {
   //Propiedadesh
   this.ctx = ctx;
   this.canvas = canvas;
@@ -9,22 +9,14 @@ function Player(name, strength, positionX, positionY) {
   this.positionY = positionY;
   this.strength = strength;
   this.health = 100;
-  this.radius = 25;
+  this.image = new Image();
+  this.image.src = img;
 }
 // metodos
-Player.prototype.drawPlayer = function() {
-  // console.log("dibujo player");
-  this.ctx.beginPath();
-  this.ctx.arc(
-    this.positionX,
-    this.positionY,
-    this.radius,
-    0,
-    Math.PI * 2,
-    true
-  );
-  this.ctx.stroke();
-  // console.log("te dibujo");
+Player.prototype.drawPlayer = function(src) {
+
+  this.ctx.drawImage(this.image, this.positionX, this.positionY);
+  
 };
 
 Player.prototype.MovePlayer = function(direction) {
@@ -73,7 +65,7 @@ Player.prototype.attackMethod = function() {
 };
 
 Player.prototype.takeDamageFrom = function(enemy) {
-  enemy.isIntanceOf
+  enemy.isIntanceOf;
 };
 
 // funcion para crear melee
@@ -93,5 +85,3 @@ function Ranged(name, stregth, position, race) {
   this.race = race;
 }
 Ranged.prototype = Object.create(Player.prototype);
-
-
