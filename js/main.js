@@ -7,6 +7,7 @@ window.onload = function() {
   game.board.drawBoard();
   game.players.drawPlayer();
   game.players1.drawPlayer();
+  game.bomba.drawBomba();
 };
 
 function update() {

@@ -33,7 +33,7 @@ Player.prototype.MovePlayer = function(direction) {
       }
       break;
     case "left":
-      if (this.positionX - 100 > 0) {
+      if (this.positionX - 100 >= 0) {
         this.positionX = this.positionX - 100;
       }
       break;
