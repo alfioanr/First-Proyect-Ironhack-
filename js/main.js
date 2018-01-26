@@ -7,24 +7,27 @@ window.onload = function() {
   game.board.drawBoard();
   game.players.drawPlayer();
   game.players1.drawPlayer();
-  game.bomba.drawBomba();
+  game.createBombas()
+  game.bombas.forEach(function(e){
+    e.drawBomba(game.status)
+  })
 };
 
 function update() {
-  // console.log("Jugardor1");
-  //console.log(game.players.positionX);
-  // console.log("Jugador2", game.players1.positionX, game.players1.positionY);
-
+  game.counter++
+  if(game.counter > 50){game.status = false}
+  // console.log(game.counter)
   ctx.clearRect(0, 0, 800, 800);
   game.board.drawBoard();
   game.players.drawPlayer();
   game.players1.drawPlayer();
-  game.bomba.drawBomba();
- 
-  // game.players1.drawPlayer();
+  game.bombas.forEach(function(e) {
+    e.drawBomba(game.status);
+    game.players.hitBombas(e)
+    game.players1.hitBombas(e)
+  });
 }
-// console.log("olis")
-// console.log(game.players.positionX)
+
 
 setInterval(update, 50);
 
@@ -122,3 +125,10 @@ document.onkeydown = function(e) {
   }
   console.log(e.keyCode);
 };
+// document.onkeydown = function(z) {
+//   switch (z.keyCode) {
+//     case 70:
+//      game.bomba.drawBomba();
+//       break;
+//   }
+// };

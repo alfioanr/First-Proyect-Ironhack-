@@ -11,8 +11,24 @@ function Player(strength, positionX, positionY, img) {
   this.health = 100;
   this.image = new Image();
   this.image.src = img;
+  this.radius = 50;
+  
 }
 // metodos
+
+
+Player.prototype.hitBombas = function(obs) {
+  if (Math.abs(obs.positionX - this.positionX) < this.radius + obs.radius - 25) {
+    console.log("ENTRO");
+    if (Math.abs(obs.positionY - this.positionY) < this.radius + obs.radius - 25) {
+      // this.image.src = "img/Explosion_0.png";
+      this.life = this.health - 100;
+      console.log("you are dead");
+      return true;
+    }
+  }
+};
+
 Player.prototype.drawPlayer = function() {
 
   this.ctx.drawImage(this.image, this.positionX, this.positionY);
