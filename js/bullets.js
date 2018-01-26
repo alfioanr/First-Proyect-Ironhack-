@@ -1,4 +1,4 @@
-function bomba(positionX,positionY) {
+function Bomba(ctx,positionX,positionY) {
      this.ctx = ctx;
      this.range =  6;
      this.positionX = positionX;
@@ -8,29 +8,24 @@ function bomba(positionX,positionY) {
     //  this.image.src = img;
 
 }
-bomba.prototype.drawBomba = function(a){
+Bomba.prototype.drawBomba = function(a){
     // console.log("pintobomba")
-    var that = this
     
     if(a==true){
         this.ctx.drawImage(this.image, this.positionX, this.positionY);
-        this.image.src = "./img/bomba.png";
+        this.image.src = "img/bomba.png";
     } 
     if(a==false) {
         this.ctx.drawImage(this.image, this.positionX, this.positionY);
-        this.image.src = "./img/Explosion_0.png";
+        this.image.src = "img/Explosion_0.png";
     }
-   
-    
-
-    
 
 }
 
-bomba.prototype.explode = function(){
+Bomba.prototype.explode = function(){
 console.log("pinto explosion")
     this.ctx.drawImage(this.image,this.positionX,this.positionY)
-    this.image.src = "./img/Explosion_0.png"
+    this.image.src = "img/Explosion_0.png"
 }
 
 

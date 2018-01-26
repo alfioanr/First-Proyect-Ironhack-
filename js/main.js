@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 var game;
 
 window.onload = function() {
-  game = new Game();
+  game = new Game(ctx);
   game.board.drawBoard();
   game.players.drawPlayer();
   game.players1.drawPlayer();
@@ -15,7 +15,7 @@ window.onload = function() {
 
 function update() {
   game.counter++
-  if(game.counter > 50){game.status = false}
+  if(game.counter > 20){game.status = false}
   // console.log(game.counter)
   ctx.clearRect(0, 0, 800, 800);
   game.board.drawBoard();
