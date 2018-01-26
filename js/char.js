@@ -13,7 +13,7 @@ function Player(strength, positionX, positionY, img) {
   this.image.src = img;
 }
 // metodos
-Player.prototype.drawPlayer = function(src) {
+Player.prototype.drawPlayer = function() {
 
   this.ctx.drawImage(this.image, this.positionX, this.positionY);
   

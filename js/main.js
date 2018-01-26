@@ -19,6 +19,7 @@ function update() {
   game.board.drawBoard();
   game.players.drawPlayer();
   game.players1.drawPlayer();
+  game.bomba.drawBomba();
  
   // game.players1.drawPlayer();
 }
